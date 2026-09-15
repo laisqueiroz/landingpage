@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Dr. Daniel Queiroz - Advocacia</title>
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e3e2e2",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "primary-fixed-dim": "#b4c6f1",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c5c6cf",
+                        "surface-container-low": "#f4f3f3",
+                        "on-surface-variant": "#44474e",
+                        "on-secondary-fixed": "#271900",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "outline": "#75777f",
+                        "on-primary-fixed-variant": "#35466a",
+                        "on-primary-fixed": "#051b3c",
+                        "on-secondary-container": "#745200",
+                        "secondary-container": "#fec65c",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#7284ab",
+                        "inverse-on-surface": "#f1f0f0",
+                        "surface-variant": "#e3e2e2",
+                        "primary": "#000000",
+                        "primary-container": "#051b3c",
+                        "surface-dim": "#dadada",
+                        "surface-bright": "#faf9f9",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed-dim": "#f5be54",
+                        "secondary": "#7c5800",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "background": "#faf9f9",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#848484",
+                        "on-background": "#1a1c1c",
+                        "surface-tint": "#4d5e84",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed": "#ffdea8",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuIcon = document.getElementById('menu-icon');
+    
+                menuBtn.addEventListener('click', () => {
+                    // Alterna entre hidden e flex
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+    
+                    // Opcional: Mudar o ícone de "menu" para "close" (X) quando aberto
+                    if (mobileMenu.classList.contains('flex')) {
+                        menuIcon.textContent = 'close';
+                    } else {
+                        menuIcon.textContent = 'menu';
+                    }
+                });
+    
+                // Opcional: Fechar o menu automaticamente ao clicar em um link interno
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        menuIcon.textContent = 'menu';
+                    });
+                });
+            });
+        </script>
+        <style>
+            body { font-family: 'Manrope', sans-serif; }
+            h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+            .glass-nav {
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(20px);
+            }
+            .cta-gradient {
+                background: linear-gradient(45deg, #051b3c 0%, #7284ab 100%);
+            }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        </style>
+    </head>
+
+    <body class="bg-surface text-on-surface antialiased">
+    <!-- TopNavBar -->
+        <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+            <div class="flex justify-between items-center px-12 py-4 max-w-screen-2xl mx-auto">
+                <div class="flex items-center gap-2">
+                    <img class="size-12" src="simbolo.svg" alt="Simbolo">
+                    <span class="font-serif text-2xl font-bold text-blue-950 dark:text-amber-500" style="">Dr. Daniel Queiroz</span>
+                </div>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#quem_somos"> <button class="text-slate-600 dark:text-slate-400 hover:text-blue-900 font-serif tracking-tight text-lg transition-all" href="#" style="">
+                        Quem Somos
+                    </button> </a>
+
+                    <a href="#areas_atuacao"> <button class="text-slate-600 dark:text-slate-400 hover:text-blue-900 font-serif tracking-tight text-lg transition-all" href="#" style="">
+                        Áreas de Atuação
+                    </button> </a>
+
+                    <a href="#localizacao"> <button class="text-amber-600 dark:text-amber-400 font-bold border-b-2 border-amber-600 font-serif tracking-tight text-lg" href="#" style="">
+                        Localização
+                    </button></a>
+
+                    <a href="#agendamento"> <button class="ml-4 px-6 py-2 bg-primary-container text-on-primary font-medium rounded-lg hover:scale-95 duration-300 transition-all" style="">
+                        Agendamento
+                    </button></a>
+                </div>
+                <div class="md:hidden" id="menu-btn">
+                    <button class="material-symbols-outlined text-primary-container text-3xl" id="menu-icon">menu</button>
+                </div>
+
+                <div id="mobile-menu" class="hidden absolute top-full left-0 w-full md:hidden flex-col gap-4 px-6 py-6 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 shadow-lg">
+                    <a href="#quem_somos" class="mobile-link text-slate-600 dark:text-slate-400 hover:text-blue-900 font-serif text-lg">Quem Somos</a>
+                    <a href="#areas_atuacao" class="mobile-link text-slate-600 dark:text-slate-400 hover:text-blue-900 font-serif text-lg">Áreas de Atuação</a>
+                    <a href="#localizacao" class="mobile-link text-amber-600 dark:text-amber-400 font-bold font-serif text-lg">Localização</a>
+                    <a href="#agendamento" class="mobile-link">
+                        <button class="w-full text-center px-6 py-2 bg-primary-container text-on-primary font-medium rounded-lg">Agendamento</button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+    <!-- Hero Section -->
+            <section id="quem_somos" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-surface">
+                <div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                    <div class="md:col-span-7 z-10">
+                        <h1 class="text-5xl md:text-7xl font-bold text-on-primary-fixed leading-tight tracking-tighter mb-6" style="">
+                            Justiça e Compromisso com Seus Direitos
+                        </h1>
+                        <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed font-light" style="">
+                            Atendimento jurídico especializado em Direito Previdenciário (INSS), Consumidor, Trabalhista e Família. Atuamos em diversos municípios com foco em resultados reais.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="px-8 py-4 cta-gradient text-on-primary font-bold rounded-md text-lg shadow-xl hover:opacity-90 transition-all" style="">
+                                Agende seu Atendimento
+                            </button>
+                            <button class="px-8 py-4 border-2 border-outline-variant text-primary-container font-bold rounded-md text-lg hover:bg-surface-container-low transition-all" style="">
+                                Saiba Mais
+                            </button>
+                        </div>
+                    </div>
+                    <div class="md:col-span-5 relative">
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10">
+                            <img alt="Interior de um escritório de advocacia moderno com estantes de madeira escura e cadeiras de couro" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVZFIYbQClCFq9-ECT6YBdtevEGIXbkxSriv3o4NPY_sWkrIKRdPo6Uodqx7cXaAnMw_JvZp057egUX8zGmzltRNl5uOAgroeolG6thUnNZQzTOZTtysTuHi6nRfSamKrh_NeS6zsMabUthc7PB6nUmQ-VukWNaZpfwf7imG3Z-Cee7iWCQ-L1-LJH1yCcvcoct3rMKd6rl5txh8wInT6yNv1y-FEDV4B_-yg4cFVDs3TPapLJiGMgQoRALIIVRjjj119gWrtrSKbt" style="">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-secondary-fixed-dim/20 rounded-full blur-3xl -z-10"></div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Expertise: Bento Grid Layout -->
+            <section id="areas_atuacao" class="py-24 bg-surface-container">
+                <div class="max-w-screen-2xl mx-auto px-12">
+                    <div class="mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-primary-container mb-4" style="">Áreas de Atuação</h2>
+                        <div class="w-20 h-1 bg-secondary rounded-full"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Major Card -->
+                        <div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between group hover:bg-on-primary-fixed transition-colors duration-500">
+                            <div>
+                                <span class="material-symbols-outlined text-amber-600 text-5xl mb-6 group-hover:text-neutral-50" style="">
+                                    account_balance
+                                </span>
+                                <h3 class="text-3xl font-bold mb-4 group-hover:text-amber-600" style="">
+                                    Direito Previdenciário &amp; Administrativo
+                                </h3>
+                                <p class="text-on-surface-variant group-hover:text-neutral-50 text-lg leading-relaxed" style="">
+                                    Aposentadorias, Pensões, Auxílios e Processos Administrativos junto ao INSS. Garantimos o seu direito com agilidade técnica.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Regular Card -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl hover:shadow-lg transition-shadow border-b-4 border-transparent hover:border-secondary">
+                            
+                            <span class="material-symbols-outlined text-amber-600 text-4xl mb-4" style="">
+                                shopping_cart
+                            </span>
+
+                            <h3 class="text-xl font-bold mb-2" style="">
+                                Direito do Consumidor
+                            </h3>
+
+                            <p class="text-on-surface-variant text-sm" style="">
+                                Proteção contra práticas abusivas, danos morais e materiais em relações de consumo.
+                            </p>
+                        </div>
+
+                        <!-- Regular Card -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl hover:shadow-lg transition-shadow border-b-4 border-transparent hover:border-secondary">
+                            <span class="material-symbols-outlined text-amber-600 text-4xl mb-4" style="">
+                                work
+                            </span>
+
+                            <h3 class="text-xl font-bold mb-2" style="">
+                                Direito Trabalhista
+                            </h3>
+
+                            <p class="text-on-surface-variant text-sm" style="">
+                                Defesa dos direitos do trabalhador, verbas rescisórias e assédio no ambiente laboral.
+                            </p>
+                        </div>
+
+                        <!-- Regular Card -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl hover:shadow-lg transition-shadow border-b-4 border-transparent hover:border-secondary">
+                            <span class="material-symbols-outlined text-amber-600 text-4xl mb-4" style="">
+                                family_restroom
+                            </span>
+
+                            <h3 class="text-xl font-bold mb-2" style="">
+                                Direito de Família
+                            </h3>
+
+                            <p class="text-on-surface-variant text-sm" style="">
+                                Divórcios, guarda, pensão alimentícia e sucessões com abordagem humanizada.
+                            </p>
+                        </div>
+
+                        <!-- Full Service Card -->
+                        <div class="bg-primary-container p-8 rounded-xl text-white md:col-span-2">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-2 text-amber-500" style="">
+                                        Serviço Completo
+                                    </h3>
+
+                                    <p class="text-neutral-50" style="">
+                                        Atendimento jurídico integral em todas esferas judiciais para pessoas físicas e jurídicas.
+                                    </p>
+                                </div>
+
+                                <button class="whitespace-nowrap px-6 py-3 bg-amber-600 text-on-secondary font-bold rounded-md hover:scale-105 transition-transform" style="">
+                                    Ver Outras Áreas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Presence Section -->
+            <section id="localizacao" class="py-24 bg-surface">
+                <div class="max-w-screen-2xl mx-auto px-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] bg-slate-100 border border-outline-variant/20">
+                    <!-- Abstract Map Representation (Lex Imperialis style) -->
+                            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+                            </div>
+
+                            <div class="relative h-full w-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary-container/5 to-secondary/5">
+                                <div class="w-full h-full bg-surface-container-lowest/50 rounded-xl border border-outline-variant/30 relative overflow-hidden">
+                <!-- Map placeholder with stylized dots for Ceara locations -->
+                                    <img class="w-full h-full" src="mapa.svg" alt="Mapa do Ceará">
+                                    <div class="absolute bottom-4 left-4 p-4 bg-white/90 backdrop-blur shadow-md rounded-lg text-xs font-bold text-primary-container border border-outline-variant/20">
+                                        <div class="flex items-center gap-2 mb-1" style="">
+                                            <div class="w-2 h-2 rounded-full bg-secondary"></div> Sede Central
+                                        </div>
+                                        <div class="flex items-center gap-2" style="">
+                                            <div class="w-2 h-2 rounded-full bg-primary-container"></div> Unidades Regionais
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-4xl md:text-5xl font-bold text-primary-container mb-6 leading-tight" style="">
+                                Nossas Filiais e Presença Regional
+                            </h2>
+
+                            <p class="text-lg text-on-surface-variant mb-8 leading-relaxed" style="">
+                                A expansão da nossa advocacia reflete o compromisso com a proximidade. Atuamos com sedes físicas estrategicamente localizadas no Ceará para garantir que você tenha acesso à justiça onde quer que esteja.
+                            </p>
+                        <!-- Location Grid/Visual List -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                                <div class="p-4 bg-primary-container/5 border border-primary-container/10 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary" style="">stars</span>
+                                        <h4 class="font-bold text-primary-container uppercase tracking-wider text-xs" style="">Sede Central</h4>
+                                    </div>
+                                    <span class="text-xl font-bold block text-on-surface" style="">Quixadá</span>
+                                    <span class="text-sm text-on-surface-variant" style=""></span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/30 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary text-sm" style="">location_on</span>
+                                            <h4 class="font-bold text-on-surface-variant uppercase tracking-wider text-xs" style="">Unidade Regional</h4>
+                                    </div>
+                                    <span class="text-lg font-bold block text-on-surface" style="">Morada Nova</span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/30 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary text-sm" style="">location_on</span>
+                                        <h4 class="font-bold text-on-surface-variant uppercase tracking-wider text-xs" style="">Unidade Regional</h4>
+                                    </div>
+                                    <span class="text-lg font-bold block text-on-surface" style="">Banabuiú</span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/30 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary text-sm" style="">location_on</span>
+                                        <h4 class="font-bold text-on-surface-variant uppercase tracking-wider text-xs" style="">Unidade Regional</h4>
+                                    </div>
+                                    <span class="text-lg font-bold block text-on-surface" style="">Quixeramobim</span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/30 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary text-sm" style="">location_on</span>
+                                        <h4 class="font-bold text-on-surface-variant uppercase tracking-wider text-xs" style="">Unidade Regional</h4>
+                                    </div>
+                                    <span class="text-lg font-bold block text-on-surface" style="">Ibaretama</span>
+                                </div>
+                                <div class="p-4 border border-outline-variant/30 rounded-lg">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="material-symbols-outlined text-secondary text-sm" style="">location_on</span>
+                                        <h4 class="font-bold text-on-surface-variant uppercase tracking-wider text-xs" style="">Unidade Regional</h4>
+                                    </div>
+                                    <span class="text-lg font-bold block text-on-surface" style="">Capistrano</span>
+                                </div>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3" style="">
+                                    <span class="material-symbols-outlined text-secondary mt-1" style="">language</span>
+                                    <div>
+                                        <span class="font-bold block" style="">Atuação Digital</span>
+                                        <span class="text-on-surface-variant text-sm" style="">Processos 100% digitais em todos os tribunais do país.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <!-- Scheduling Section -->
+            <section id="agendamento" class="py-24 bg-surface-container-low">
+                <div class="max-w-screen-xl mx-auto px-12 text-center">
+                    <h2 class="text-4xl font-bold text-primary-container mb-4" style="">Escolha sua modalidade de atendimento</h2>
+                    <p class="text-on-surface-variant mb-12 max-w-2xl mx-auto" style="">Adaptamos nossa estrutura para melhor lhe atender, seja de forma remota ou em uma de nossas unidades físicas.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Online Card -->
+                        <div class="bg-white p-12 rounded-2xl shadow-sm border border-outline-variant/10 hover:translate-y-[-8px] transition-transform duration-300">
+                            <div class="w-16 h-16 bg-primary-fixed-dim flex items-center justify-center rounded-full mx-auto mb-6">
+                                <span class="material-symbols-outlined text-primary-container text-3xl" style="">videocam</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4" style="">Atendimento Online</h3>
+                            <p class="text-on-surface-variant mb-8" style="">Flexibilidade total para realizar sua consulta de qualquer lugar através de vídeo-conferência segura.</p>
+                            <button class="w-full py-4 bg-primary-container text-on-primary font-bold rounded-lg hover:bg-black transition-colors" style="">
+                                Agendar Atendimento Online
+                            </button>
+                        </div>
+                        <!-- In-person Card -->
+                        <div class="bg-white p-12 rounded-2xl shadow-sm border border-outline-variant/10 hover:translate-y-[-8px] transition-transform duration-300">
+                            <div class="w-16 h-16 bg-secondary-fixed flex items-center justify-center rounded-full mx-auto mb-6">
+                                <span class="material-symbols-outlined text-secondary text-3xl" style="">meeting_room</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4" style="">Atendimento Presencial</h3>
+                            <p class="text-on-surface-variant mb-8" style="">Disponível em nossas filiais em datas específicas da semana. Consulte a disponibilidade para sua região.</p>
+                            <button class="w-full py-4 border-2 border-secondary text-secondary font-bold rounded-lg hover:bg-secondary hover:text-white transition-all" style="">
+                                Ver Datas e Locais
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    <!-- Footer -->
+        <footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+            <div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-8 max-w-screen-2xl mx-auto">
+                <div class="flex flex-col gap-4">
+                    <span class="font-serif text-xl font-semibold text-blue-900 dark:text-amber-500" style="">Dr. Daniel Queiroz</span>
+                    <p class="font-sans text-sm tracking-wide text-slate-500 dark:text-slate-400" style="">© 2024 Dr. Daniel Queiroz - Advocacia. Todos os direitos reservados.</p>
+                </div>
+                <div class="flex gap-8">
+                    <a class="font-sans text-sm tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-amber-300 transition-colors" href="#" style="">Política de Privacidade</a>
+                    <a class="font-sans text-sm tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-amber-300 transition-colors" href="#" style="">Termos de Uso</a>
+                    <a class="font-sans text-sm tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-700 dark:hover:text-amber-300 transition-colors" href="#" style="">Avisos Legais</a>
+                </div>
+                <div class="flex gap-4">
+                    <a class="opacity-80 hover:opacity-100 transition-all text-blue-900 dark:text-amber-500" href="#" style="">
+                        <span class="material-symbols-outlined" style="">share</span>
+                    </a>
+                    <a class="opacity-80 hover:opacity-100 transition-all text-blue-900 dark:text-amber-500" href="#" style="">
+                        <span class="material-symbols-outlined" style="">mail</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
